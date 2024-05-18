@@ -2,7 +2,6 @@
 #include <pybind11/stl.h>
 #include <matplot/matplot.h>
 #include <AudioFile.h>
-//#include <imageio/imageio.h>
 #include <vector>
 #include <cmath>
 
@@ -26,7 +25,7 @@ std::vector<double> generateCosine(double frequency) {
     double sampleRate = 10000.0;
     std::vector<double> result;
     for (double t = 0; t < duration; t += 1.0 / sampleRate) {
-        result.push_back(std::cos(2 * 3.14 * frequency * t));
+        result.push_back(std::cos(6.28 * frequency * t));
     }
     return result;
 }
@@ -108,7 +107,7 @@ PYBIND11_MODULE(_core, m) {
 
     )pbdoc");
 
-    m.def("generateSquare", &generateSquare, R"pbdoc(
+    m.def("generateRectangular", &generateRectangular, R"pbdoc(
     
 
     )pbdoc");
